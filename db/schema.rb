@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209232913) do
+ActiveRecord::Schema.define(version: 20151209233510) do
 
   create_table "tips", force: :cascade do |t|
     t.string   "title"
@@ -21,11 +21,26 @@ ActiveRecord::Schema.define(version: 20151209232913) do
     t.string   "do"
     t.string   "dont"
     t.string   "quote"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.boolean  "approved"
     t.integer  "user_id"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
+
+  add_index "tips", ["cached_votes_down"], name: "index_tips_on_cached_votes_down"
+  add_index "tips", ["cached_votes_score"], name: "index_tips_on_cached_votes_score"
+  add_index "tips", ["cached_votes_total"], name: "index_tips_on_cached_votes_total"
+  add_index "tips", ["cached_votes_up"], name: "index_tips_on_cached_votes_up"
+  add_index "tips", ["cached_weighted_average"], name: "index_tips_on_cached_weighted_average"
+  add_index "tips", ["cached_weighted_score"], name: "index_tips_on_cached_weighted_score"
+  add_index "tips", ["cached_weighted_total"], name: "index_tips_on_cached_weighted_total"
 
   create_table "users", force: :cascade do |t|
     t.boolean  "admin"

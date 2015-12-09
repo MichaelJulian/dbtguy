@@ -5,7 +5,7 @@ class TipsController < ApplicationController
   # GET /tips
   # GET /tips.json
   def index
-    @tips = Tip.all.where(:approved => true)
+    @tips = Tip.all.where(:approved => true).order(cached_votes_up: :desc)
   end
 
   def pending
@@ -13,7 +13,7 @@ class TipsController < ApplicationController
   end
 
   def all
-    @tips = Tip.all
+    @tips = Tip.order(id: :desc)
   end
 
   def about
@@ -81,7 +81,7 @@ class TipsController < ApplicationController
 
   def upvote
     @tip.upvote_from current_user
-    redirect_to tips_path
+    redirect_to :back
   end
 
   def downvote
