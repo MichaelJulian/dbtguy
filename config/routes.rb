@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/pending' => "tips#pending"
   get '/all' => "tips#all"
   devise_for :users
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

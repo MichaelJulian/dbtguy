@@ -21,7 +21,7 @@
               <center>
                   <h1><%= f.text_field :title, :class => "form-control form-title", :placeholder => "title" %></h1>
                   <h2 class="subtitle"><%= f.text_field :caption, :class => "form-control form-subtitle", :placeholder => "caption" %> </h2>
-                  <h3 class="meta"><%= f.text_field :author, :placeholder => "your name" ,:class => "form-control form-author" %> </h3>
+                  <p class="post-meta">Posted by <%= current_user.display_name %> on <%= Date.today.strftime("%B %e, %Y") %></p>
               </center>
               </div>
           </div>

@@ -6,7 +6,7 @@
               <center>
                   <h1><%= @tip.title %></h1>
                   <h2 class="subtitle"><%= @tip.caption %> </h2>
-                  <h3 class="meta">Posted by <%= @tip.author %> on <%= @tip.created_at.strftime("%B %e, %Y") %></h3>
+                  <h3 class="meta">Posted by <%= @tip.user.display_name %> on <%= @tip.created_at.strftime("%B %e, %Y") %></h3>
               </center>
               </div>
           </div>
