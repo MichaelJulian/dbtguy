@@ -5,7 +5,7 @@ class TipsController < ApplicationController
   # GET /tips
   # GET /tips.json
   def index
-    @tips = Tip.all
+    @tips = Tip.all.where(:approved => true)
   end
 
   def about
