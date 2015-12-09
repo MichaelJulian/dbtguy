@@ -3,6 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
 
                     <p> <i>Situation:</i> <%= @tip.situation %> </p>
 
@@ -11,7 +12,12 @@
                     <p>
                     <blockquote><%= @tip.quote %></blockquote>
 
-                    <span class="caption text-muted">Thanks for reading.</span>
+                    <span class="caption text-muted">
+                        <% unless @tip.approved %>
+                    Thank you for your submission! This tip has not been approved yet, but will appear on the "submitted" page.
+                    <% else %>
+                    Thanks for reading.
+                    <% end %></span>
 
                 </div>
             </div>

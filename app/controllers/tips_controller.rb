@@ -8,6 +8,14 @@ class TipsController < ApplicationController
     @tips = Tip.all.where(:approved => true)
   end
 
+  def pending
+    @tips = Tip.all.where("approved IS ?", nil)
+  end
+
+  def all
+    @tips = Tip.all
+  end
+
   def about
   end
 

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'tips#index'
   get '/about' => 'tips#about'
+  get '/pending' => "tips#pending"
+  get '/all' => "tips#all"
   devise_for :users
   
   # The priority is based upon order of creation: first created -> highest priority.
