@@ -8,6 +8,9 @@ class TipsController < ApplicationController
     @tips = Tip.all
   end
 
+  def about
+  end
+
   # GET /tips/1
   # GET /tips/1.json
   def show
@@ -21,6 +24,9 @@ class TipsController < ApplicationController
 
   # GET /tips/1/edit
   def edit
+    # unless user.admin == true
+    #   redirect_to tips_path
+    # end
   end
 
   # POST /tips
