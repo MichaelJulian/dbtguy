@@ -1,0 +1,54 @@
+<%= render 'navbar' %>
+
+<%= form_for(@tip) do |f| %>
+  <% if @tip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tip.errors.count, "error") %> prohibited this tip from being saved:</h2>
+
+      <ul>
+      <% @tip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<header class="intro-header" style="background-image: url('/assets/home-bg.jpg')">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+              <center>
+                  <h1><%= f.text_field :title, :class => "form-control form-title", :placeholder => "title" %></h1>
+                  <h2 class="subtitle"><%= f.text_field :caption, :class => "form-control form-subtitle", :placeholder => "caption" %> </h2>
+                  <h3 class="meta"><%= f.text_field :author, :placeholder => "your name" ,:class => "form-control form-author" %> </h3>
+              </center>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+<article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <p> <i>Situation:</i> <%= f.text_field :situation, :class => "form-control"  %> </p>
+
+                    <p><b>Do: </b><%= f.text_field :do, :class => "form-control" %></p>
+                    <p><b>Do Not: </b><%= f.text_field :dont, :class => "form-control" %></p>
+                    <p>
+                    <blockquote><%= f.text_field :quote, :class => "form-control", :placeholder => "quote goes here" %></blockquote>
+                    <center><div class="actions">
+    <%= f.submit %>
+  </div></center>
+
+                    <span class="caption text-muted">Thanks for reading.</span>
+
+                </div>
+            </div>
+        </div>
+    </article>
+  <br>
+<% end %>

@@ -1,0 +1,53 @@
+<body>
+
+<%= render 'titlebar' %>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <% @tips.each do |tip| %>
+        <div class="post-preview">
+          <%= link_to(tip) do %>
+          <div>
+          <h2 class="post-title">
+            <%= tip.title %>
+          </h2>
+          <h3 class="post-subtitle">
+            <%= tip.caption %>
+          </h3>
+        </div>
+        <% end %>
+          <p class="post-meta">Posted by <%= tip.author %> on <%= tip.created_at.strftime("%B %e, %Y") %></p>
+
+          <!-- <p class="post-meta">Posted by <a href="#">Trevor Healy</a> on November 29, 2015</p> -->
+        </div>
+        <hr>
+        <% end %>
+        <!-- Pager -->
+        <ul class="pager">
+          <li class="next">
+            <a href="#" id="load">Older Posts &rarr;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <script>
+  $(function(){
+    $(".post-preview").slice(0, 3).show(); // select the first ten
+    $("#load").click(function(e){ // click event for load more
+      e.preventDefault();
+        $(".post-preview:hidden").slice(0, 3).show(); // select next 10 hidden divs and show them
+        $("#load").hide();
+
+      });
+  });
+  </script>
+
+</body>
+
+</html>
+

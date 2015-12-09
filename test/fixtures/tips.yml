@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  caption: MyString
+  situation: MyString
+  do: MyString
+  dont: MyString
+  quote: MyString
+
+two:
+  title: MyString
+  caption: MyString
+  situation: MyString
+  do: MyString
+  dont: MyString
+  quote: MyString

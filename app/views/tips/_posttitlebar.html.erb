@@ -1,0 +1,15 @@
+<header class="intro-header" style="background-image: url('/assets/home-bg.jpg')">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+              <center>
+                  <h1><%= @tip.title %></h1>
+                  <h2 class="subtitle"><%= @tip.caption %> </h2>
+                  <h3 class="meta">Posted by <%= @tip.author %> on <%= @tip.created_at.strftime("%B %e, %Y") %></h3>
+              </center>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
