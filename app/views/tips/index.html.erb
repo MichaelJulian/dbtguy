@@ -31,7 +31,7 @@
           </h3>
         </div>
         <% end %>
-          <p class="post-meta">Posted by <%= tip.author %> on <%= tip.created_at.strftime("%B %e, %Y") %></p>
+          <p class="post-meta">Posted by <%= tip.user.email %> on <%= tip.created_at.strftime("%B %e, %Y") %></p>
 
           <!-- <p class="post-meta">Posted by <a href="#">Trevor Healy</a> on November 29, 2015</p> -->
         </div>
