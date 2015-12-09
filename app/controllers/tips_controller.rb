@@ -1,4 +1,5 @@
 class TipsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
   # GET /tips
