@@ -20,6 +20,13 @@
         <li>
           <a href="/tips/new">Submit</a>
         </li>
+        <li>
+          <% if current_user %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path %>
+            <% end %>
+        </li>
       </ul>
     </div>
   </div>
