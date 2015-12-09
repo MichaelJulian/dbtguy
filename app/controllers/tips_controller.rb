@@ -41,6 +41,8 @@ class TipsController < ApplicationController
   # POST /tips.json
   def create
     @tip = Tip.new(tip_params)
+    @tip.user = current_user
+    @tip.save
 
     respond_to do |format|
       if @tip.save
