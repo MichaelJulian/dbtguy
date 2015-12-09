@@ -24,9 +24,9 @@ class TipsController < ApplicationController
 
   # GET /tips/1/edit
   def edit
-    # unless user.admin == true
-    #   redirect_to tips_path
-    # end
+    unless current_user && current_user.admin == true
+      redirect_to root_path
+    end
   end
 
   # POST /tips
