@@ -4,6 +4,8 @@
   <!-- Main Content -->
 
   <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <center><ul class="nav nav-pills">
   <li class="<%= 'active' if params[:action] == 'index' %>">
     <%= link_to "Top", :controller => "tips", :action => "index"%>
@@ -15,8 +17,7 @@
     <%= link_to "All", :controller => "tips", :action => "all"%>
   </li>
 </center>
-  
-</ul></center>
+</ul></center></div></div>
     <div class="row">
 
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

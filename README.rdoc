@@ -1,28 +1,11 @@
-== README
+== Don't Be That Guy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This site is an in-progress version of DbtGuy, a website that intends to:
 
-Things you may want to cover:
+* Teach men how to not sexually harass women
 
-* Ruby version
+* Accept user submissions and tips
 
-* System dependencies
+* Increase awareness around sexual assault and harassment
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Leverage rails to scale user content, moderation, voting, and profiles.
