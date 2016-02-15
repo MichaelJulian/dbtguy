@@ -53,3 +53,5 @@ gem 'devise'
 gem 'rails_admin'
 
 gem 'acts_as_votable'
+
+gem 'dotenv-rails', :groups => [:development, :test]

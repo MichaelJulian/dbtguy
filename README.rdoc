@@ -9,3 +9,7 @@ This site is an in-progress version of DbtGuy, a website that intends to:
 * Increase awareness around sexual assault and harassment
 
 * Leverage rails to scale user content, moderation, voting, and profiles.
+
+== Authors
+
+Don't Be That Guy (DBTG) was created by Santa Clara University students Trevor Healy and Michael Julian over the course of their senior year Feminism and Women's Studies class.
