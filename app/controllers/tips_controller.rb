@@ -1,6 +1,6 @@
 class TipsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  before_action :set_tip, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_tip, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :]
 
   # GET /tips
   # GET /tips.json
@@ -83,6 +83,15 @@ class TipsController < ApplicationController
     @tip.upvote_from current_user
     redirect_to :back
   end
+
+  # def vote
+  #   @tip = Tip.find(params[:post_id])
+  #   @tip.upvote_from current_user
+  #   respond_to do |format|
+  #     format.html { redirect_to :back }
+  #     format.json { redirect json: { count: @tip.get_upvotes.size } }
+  #   end
+  # end
 
   def downvote
     @tip.downvote_from current_user
