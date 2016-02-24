@@ -1,5 +1,5 @@
 class TipsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  # before_action :authenticate_user!, only: [:new]
   before_action :set_tip, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /tips
@@ -27,7 +27,12 @@ class TipsController < ApplicationController
 
   # GET /tips/new
   def new
-    @tip = Tip.new
+    if current_user
+      @tip = Tip.new
+    else
+      redirect_to new_user_registration_path
+    end
+
   end
 
   # GET /tips/1/edit
